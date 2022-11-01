@@ -1,0 +1,21 @@
+<main class="p-3 d-flex justify-content-center">
+  <section class="card shadow max-w-1">
+    <div class="card-body">
+      <h1>Message Me!</h1>
+      <p>Hello and welcome to Message Me!</p>
+      <p>A chatroom app made using</p>
+      <ul>
+        <li>Ruby on Rails,</li>
+        <li>View Components, and</li>
+        <li>Stimulus Reflex</li>
+      </ul>
+      <p>Here, you can chat with thousands of users in realtime!</p>
+      <p> Just enter your email below and we'll send you a login link. No need to signup!
+      </p>
+      <%= form_with url: "/login", class: "row p-3" do |f| %>
+        <%= f.email_field :email, placeholder: "Email", class: "form-control mb-2" %>
+        <%= f.submit "send", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </section>
+</main>

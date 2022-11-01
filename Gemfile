@@ -31,7 +31,11 @@ gem "cssbundling-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.0"
+
+gem "redis", ">= 4", "< 5"
+
+gem "cable_ready", github: "stimulusreflex/cable_ready", branch: "master"
+gem "stimulus_reflex", github: "stimulusreflex/stimulus_reflex", branch: "new_installer"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -73,3 +77,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "redis-session-store", "0.11.4"

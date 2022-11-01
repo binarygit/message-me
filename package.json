@@ -2,16 +2,24 @@
   "name": "app",
   "private": "true",
   "dependencies": {
-    "@hotwired/stimulus": "^3.1.1",
+    "@hotwired/stimulus": "^3.1.0",
     "@hotwired/turbo-rails": "^7.2.4",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
     "esbuild": "^0.15.12",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "cable_ready": "5.0.0-pre9",
+    "stimulus_reflex": "stimulusreflex/dev-builds#stimulus_reflex/3447646",
+    "esbuild-rails": "^1.0.3",
+    "mrujs": "^0.10.1"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+    "build": "node esbuild.config.js",
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:default": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
+  },
+  "resolutions": {
+    "cable_ready": "cableready/dev-builds#cable_ready/05e2f1b"
   }
 }

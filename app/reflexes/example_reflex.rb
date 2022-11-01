@@ -32,8 +32,4 @@ class ExampleReflex < ApplicationReflex
   #   end
   #
   # Learn more at: https://docs.stimulusreflex.com/rtfm/reflex-classes
-
-  def dance
-    morph "#dance", "I'm dancing!"
-  end
 end

@@ -4,8 +4,12 @@ class LoginInvitationsController < ApplicationController
     hash = SecureRandom.urlsafe_base64
     @invitation.email = params[:email]
     @invitation.unique_hash = hash
-    @invitation.save
-    flash[:success] = "Login link has been sent to #{params[:email]}"
+    if @invitation.save
+      flash[:success] = "Login link has been sent to #{params[:email]}"
+    else
+      flash[:danger] = "Sorry, something went wrong!"
+    end
+
     redirect_to root_path
   end
 

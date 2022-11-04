@@ -26,11 +26,11 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_template 'static_pages/home'
 
-    assert_emails 0
-    assert_difference "LoginInvitation.count" do
-      post '/login_invite', params: { email: @user.email }
+    assert_enqueued_emails 1 do
+      assert_difference "LoginInvitation.count" do
+        post '/login_invite', params: { email: @user.email }
+      end
     end
-    assert_emails 1
 
     assert_response :redirect
     follow_redirect!

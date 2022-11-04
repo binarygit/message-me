@@ -13,8 +13,6 @@ class LoginInvitationMailerTest < ActionMailer::TestCase
     assert_equal [invitation.email], email.to
     assert_equal "[Message me!] Login via link", email.subject
 
-    #p read_fixture("invite")
-    assert_equal read_fixture("invite").join, email.text_part.body.to_s
-    #assert_equal read_fixture("invite").join, email.html_part.body.to_s
+    assert_match "Message me!", email.body.encoded
   end
 end

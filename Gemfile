@@ -32,7 +32,7 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 
-gem "redis", ">= 4", "< 5"
+gem "redis", '~> 4.7.1'
 
 gem "cable_ready", github: "stimulusreflex/cable_ready", branch: "master"
 gem "stimulus_reflex", github: "stimulusreflex/stimulus_reflex", branch: "new_installer"

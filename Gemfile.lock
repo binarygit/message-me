@@ -195,7 +195,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    redis (4.8.0)
+    redis (4.7.1)
     redis-session-store (0.11.4)
       actionpack (>= 3, < 8)
       redis (>= 3, < 5)
@@ -272,7 +272,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   rails-controller-testing
-  redis (>= 4, < 5)
+  redis (~> 4.7.1)
   redis-session-store (= 0.11.4)
   sassc-rails
   selenium-webdriver

@@ -14,5 +14,7 @@ class LoginInvitationMailerTest < ActionMailer::TestCase
     assert_equal "[Message me!] Login via link", email.subject
 
     assert_match "Message me!", email.body.encoded
+    # TODO test whether the email contains a link to the root
+    # and a link to the verify action
   end
 end

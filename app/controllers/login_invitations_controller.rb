@@ -15,7 +15,6 @@ class LoginInvitationsController < ApplicationController
   end
 
   def verify
-    @invitation = LoginInvitation.find_by(hash: params[:hash])
-    @verified = true if invitation
+    @invitation = LoginInvitation.find_by(unique_hash: params[:hash])
   end
 end

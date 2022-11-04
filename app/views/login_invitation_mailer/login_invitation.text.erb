@@ -1,6 +1,6 @@
-Here’s your link to log in at Message me!
-
-If you did not request this link, you can safely ignore this email.
+Here’s your link to log in at <%= link_to "Message me!", root_url %>
 
 Click the following link to log in:
-link
+<%= link_to nil, login_invitations_verify_url(@invitation.unique_hash) %>
+
+If you did not request this link, you can safely ignore this email.

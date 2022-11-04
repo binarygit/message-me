@@ -11,7 +11,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     assert_template 'static_pages/home'
 
     assert_no_difference "LoginInvitation.count" do
-      post '/login_invite', params: { email: "" }
+      post login_invitations_path, params: { email: "" }
     end
 
     assert_response :redirect
@@ -28,7 +28,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
 
     assert_enqueued_emails 1 do
       assert_difference "LoginInvitation.count" do
-        post '/login_invite', params: { email: @user.email }
+        post login_invitations_path, params: { email: @user.email }
       end
     end
 

@@ -11,7 +11,7 @@
       </ul>
       <p>Here, you can chat with thousands of users in realtime!</p>
       <p class="alert alert-success">Just enter your email below and we'll send you a login link. No need to signup!</p>
-      <%= form_with url: "/login_invite", class: "row p-3" do |f| %>
+      <%= form_with url: login_invitations_path, class: "row p-3" do |f| %>
         <%= f.email_field :email, placeholder: "Email", class: "form-control mb-2" %>
         <%= f.submit "send", class: "btn btn-primary" %>
       <% end %>

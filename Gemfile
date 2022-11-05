@@ -38,6 +38,7 @@ gem "cable_ready", github: "stimulusreflex/cable_ready", branch: "master"
 gem "stimulus_reflex", github: "stimulusreflex/stimulus_reflex", branch: "new_installer"
 gem 'rails-controller-testing'
 gem 'sidekiq'
+gem "view_component"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

@@ -7,7 +7,10 @@
     <% if @invitation %>
         <h1>Continue to Message me!</h1>
         <p>logging in as <%= @invitation.email %></p>
-        <%= button_to "Finish Login", login_path, class: "btn btn-primary" %>
+        <%= button_to "Finish Login", login_path, class: "btn btn-primary", 
+          params: {
+          invitation_id: @invitation.id
+        } %>
     <% else %>
       <h1>Sorry, that login link is too old.</h1>
       <p>Please create a new <%= link_to "link", root_path %> to login.</p>

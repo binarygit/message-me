@@ -56,5 +56,28 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     assert_select 'h1', "Continue to Message me!"
     assert_select 'p', "logging in as #{@invitation.email}"
     assert_select "button", "Finish Login"
+
+    # It creates the user if the user doesn't exist
+    assert_difference "User.count" do
+      # It deletes the invitation once logged in
+      assert_difference "LoginInvitation.count", -1 do
+        post login_path, params: { invitation_id: @invitation.id }
+      end
+    end
+
+    assert_response :redirect
+    follow_redirect!
+    assert is_logged_in?
+    assert_template 'static_pages/home'
+    assert flash[:success]
+  end
+
+  test "logging in doesn't create new user if user already exists" do
+    invitation = login_invitations(:two)
+    assert_no_difference "User.count" do
+      post login_path, params: { invitation_id: invitation.id }
+    end
+
+    assert is_logged_in?
   end
 end

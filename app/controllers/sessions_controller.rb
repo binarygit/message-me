@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login
+
   def create
     @invitation = LoginInvitation.find(params[:invitation_id])
     @user = User.find_or_create_by(email: @invitation.email)
@@ -6,6 +8,6 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     
     flash[:success] = "You are successfully logged in."
-    redirect_to messages_path
+    redirect_to messages_url
   end
 end

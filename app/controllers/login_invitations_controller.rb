@@ -1,4 +1,6 @@
 class LoginInvitationsController < ApplicationController
+  skip_before_action :require_login
+
   def create
     @invitation = LoginInvitation.new
     hash = SecureRandom.urlsafe_base64

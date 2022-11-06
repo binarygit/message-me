@@ -67,8 +67,9 @@ class UserLoginTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
     follow_redirect!
-    assert is_logged_in?
-    assert_template 'static_pages/home'
+    logged_in = !session[:user_id].nil?
+    assert logged_in
+    assert_template 'messages/index'
     assert flash[:success]
   end
 

@@ -6,6 +6,6 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     
     flash[:success] = "You are successfully logged in."
-    redirect_to root_path
+    redirect_to messages_path
   end
 end

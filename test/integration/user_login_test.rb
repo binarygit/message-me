@@ -67,10 +67,18 @@ class UserLoginTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
     follow_redirect!
-    logged_in = !session[:user_id].nil?
-    assert logged_in
+    assert is_logged_in?
     assert_template 'messages/index'
     assert flash[:success]
+
+    # Logging out works
+    assert_select 'button', "Logout"
+    delete logout_path
+    assert_response :redirect
+    follow_redirect!
+    assert_template 'static_pages/home'
+    assert flash[:success]
+    assert_not is_logged_in?
   end
 
   test "logging in doesn't create new user if user already exists" do

@@ -1,9 +1,5 @@
-body {
-  background: $red-500;
-}
-
 li {
-  list-style-image: url('bulls-eye.svg');
+  list-style-image: url('plane.svg');
 }
 
 .card {
@@ -13,9 +9,20 @@ li {
 .card-body {
   li {
     padding: map-get($spacers, 2);
+    font-size: 1.3rem;
   }
 }
 
 .img-container {
   width: auto;
+}
+
+@media (max-width: 810px) {
+  .verify-page {
+    flex-direction: column;
+
+    img {
+      height: 215px;
+    }
+  }
 }

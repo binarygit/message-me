@@ -9,7 +9,7 @@ class LoginInvitationMailerTest < ActionMailer::TestCase
       email.deliver_now
     end
 
-    assert_equal ["from@example.com"], email.from
+    assert_equal ["inscription4@outlook.com"], email.from
     assert_equal [invitation.email], email.to
     assert_equal "[Message me!] Login via link", email.subject
 

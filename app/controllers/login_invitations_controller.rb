@@ -7,7 +7,6 @@ class LoginInvitationsController < ApplicationController
     @invitation.email = params[:email]
     @invitation.unique_hash = hash
     if @invitation.save
-      LoginInvitationMailer.login_invitation(@invitation).deliver_later
       flash[:success] = "Login link has been sent to #{params[:email]}"
     else
       flash[:danger] = "Sorry, something went wrong!"

@@ -1,12 +1,16 @@
+body {
+  background-color: #7fdbff;
+}
+
 li {
   list-style-image: url('plane.svg');
 }
 
-.card {
+.home .card {
   border-top: 20px solid $blue-500;
 }
 
-.card-body {
+.home .card-body {
   li {
     padding: map-get($spacers, 2);
     font-size: 1.3rem;
@@ -15,6 +19,32 @@ li {
 
 .img-container {
   width: auto;
+}
+
+.message {
+  padding: 0.5em;
+  border-radius: 1em;
+  margin: 0.5em;
+  line-height: 1.1em;
+  background-color: white;
+
+  .author {
+    font-size: 0.6rem;
+  }
+}
+
+#messages {
+  max-height: 660px;
+  overflow: scroll;
+}
+
+#messages * {
+  overflow-anchor: none;
+}
+
+#anchor {
+  overflow-anchor: auto;
+  height: 1px;
 }
 
 @media (max-width: 810px) {

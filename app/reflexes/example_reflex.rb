@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class ExampleReflex < ApplicationReflex
+
+  def send_message
+    #cable_ready["visitors"].console_log(message: "Hello World!").broadcast
+    cable_ready["visitors"].inner_html(selector: "#morph-me", html: "Hello World!").broadcast
+    morph :nothing
+  end
   # Add Reflex methods in this file.
   #
   # All Reflex instances include CableReady::Broadcaster and expose the following properties:

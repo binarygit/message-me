@@ -8,7 +8,7 @@ class MessagesReflex < ApplicationReflex
     @new_message.save
     partial = {partial: "message", locals: { message: @new_message }}
     if @new_message.persisted?
-      cable_ready.insert_adjacent_html(selector: "#anchor", html: render(partial), position: "beforebegin").broadcast
+      cable_ready["visitors"].insert_adjacent_html(selector: "#anchor", html: render(partial), position: "beforebegin").broadcast
     end
     morph :nothing
   end

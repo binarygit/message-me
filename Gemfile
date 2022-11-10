@@ -39,6 +39,7 @@ gem "stimulus_reflex", github: "stimulusreflex/stimulus_reflex", branch: "new_in
 gem 'rails-controller-testing'
 gem 'sidekiq', '~> 7.0.1'
 gem "view_component"
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

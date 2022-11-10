@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require 'faker'
+
+LoginInvitation.delete_all
+User.destroy_all
+
+LoginInvitation.create(email: "avi@avi.com", unique_hash: SecureRandom.urlsafe_base64)
+
+User.create(email: "avi@avi.com")
+
+5.times do 
+  User.create(email: Faker::Internet.unique.email)
+end
+
+50.times do
+  user = User.all.sample
+  message = user.messages.build(description: Faker::Quote.famous_last_words)
+  message.save
+end

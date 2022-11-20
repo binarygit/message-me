@@ -1,11 +1,11 @@
 <main class="container">
   <section class="d-flex justify-content-end p-3"><%= button_to "Logout", logout_path, class: "btn btn-danger", method: "delete" %></section>
   <section >
-    <h1>All Messages
+    <h1><%= @room.name %>
       <%= image_tag "mountain.png", height: "50px" %>
     </h1>
     <div id="messages" >
-      <%= render partial: 'message', collection: @messages %>
+      <%= render partial: 'messages/message', collection: @room.messages %>
       <div id="anchor"></div>
     </div>
 
@@ -31,3 +31,4 @@
     <% end %>
   </section>
 </main>
+

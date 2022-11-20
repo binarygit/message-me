@@ -8,7 +8,10 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     
     flash[:success] = "You are successfully logged in."
-    redirect_to messages_url
+    # TODO redirect to the last room the user was in
+    # or redirect to the first room
+    room = Room.first
+    redirect_to room
   end
 
   def destroy

@@ -1,4 +1,4 @@
-<main class="container">
+<main class="container" data-controller="room" data-room-id-value ="<%= @room.id %>">
   <section class="d-flex justify-content-end p-3"><%= button_to "Logout", logout_path, class: "btn btn-danger", method: "delete" %></section>
   <section >
     <h1><%= @room.name %>

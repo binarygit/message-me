@@ -15,3 +15,6 @@ application.register("hello", HelloController)
 
 import MessagesController from "./messages_controller"
 application.register("messages", MessagesController)
+
+import RoomController from "./room_controller"
+application.register("room", RoomController)

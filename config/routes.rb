@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create', as: 'login'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 
+  resources :messages, only: [:create]
   resources :rooms, only: [:show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

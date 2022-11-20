@@ -1,4 +1,6 @@
 import ApplicationController from "./application_controller";
+import CableReady from 'cable_ready'
+
 export default class extends ApplicationController {
   static values = {
     id: Number,

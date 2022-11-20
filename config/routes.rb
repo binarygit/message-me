@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rooms
   root 'static_pages#home'
   get '/home', to: 'static_pages#home', as: 'home'
   post '/login_invitations', to: 'login_invitations#create'

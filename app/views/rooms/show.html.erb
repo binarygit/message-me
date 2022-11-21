@@ -5,33 +5,9 @@
       <%= image_tag "mountain.png", height: "50px" %>
     </h1>
     <div id="messages" >
-      <%= render partial: 'messages/message', collection: @room.messages %>
+      <%= render partial: 'messages/message', collection: @messages %>
       <div id="anchor"></div>
     </div>
-
-    <!--
-    <%= form_with model: Message.new, url: '', class: "p-2 row row-cols-lg-auto g-3 align-items-center card-footer", 
-      data: { controller: "messages", reflex: "submit->Messages#create", "reflex-serialize-form": true}, local: true do |f| %>
-      <%= f.hidden_field :room_id, value: @room.id %>
-      <div class="col-12 flex-grow-1">
-        <div class="input-group">
-          <%= f.text_field :description, 
-            placeholder: "Write your message here", class: "form-control p-2",
-            data: { "messages-target": "input" }
-          %>
-        </div>
-      </div>
-      <div class="col-12 flex-grow">
-        <div class="input-group">
-          <%= f.submit "Send message",
-            id: "message-submit-btn",
-            class: "btn btn-primary form-control p-2",
-            data: { "messages-target": "submit" }
-          %>
-        </div>
-      </div>
-    <% end %>
-    --!>
 
     <%= form_with model: Message.new, class: "p-2 row row-cols-lg-auto g-3 align-items-center card-footer", local: true do |f| %>
       <%= f.hidden_field :room_id, value: @room.id %>
@@ -54,4 +30,3 @@
     <% end %>
   </section>
 </main>
-

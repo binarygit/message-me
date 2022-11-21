@@ -33,10 +33,6 @@ li {
   }
 }
 
-#messages {
-  max-height: 660px;
-  overflow: scroll;
-}
 
 #messages * {
   overflow-anchor: none;
@@ -56,3 +52,11 @@ li {
     }
   }
 }
+
+@media (min-width: 1200px) {
+  #messages {
+    max-height: 788px;
+    overflow: scroll;
+  }
+}
+

@@ -13,9 +13,6 @@ application.register("example", ExampleController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import MessagesController from "./messages_controller"
-application.register("messages", MessagesController)
-
 import ResetFormController from "./reset_form_controller"
 application.register("reset-form", ResetFormController)
 

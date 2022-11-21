@@ -16,5 +16,8 @@ application.register("hello", HelloController)
 import MessagesController from "./messages_controller"
 application.register("messages", MessagesController)
 
+import ResetFormController from "./reset_form_controller"
+application.register("reset-form", ResetFormController)
+
 import RoomController from "./room_controller"
 application.register("room", RoomController)

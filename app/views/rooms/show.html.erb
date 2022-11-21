@@ -9,7 +9,7 @@
       <div id="anchor"></div>
     </div>
 
-    <%= form_with model: Message.new, class: "p-2 row row-cols-lg-auto g-3 align-items-center card-footer", local: true do |f| %>
+    <%= form_with model: Message.new, class: "p-2 row row-cols-lg-auto g-3 align-items-center card-footer", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }, local: true do |f| %>
       <%= f.hidden_field :room_id, value: @room.id %>
       <div class="col-12 flex-grow-1">
         <div class="input-group">

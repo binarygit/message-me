@@ -13,6 +13,8 @@ User.destroy_all
 Room.destroy_all
 
 LoginInvitation.create(email: "avi@avi.com", unique_hash: SecureRandom.urlsafe_base64)
+LoginInvitation.create(email: "mobile@mobile.com", unique_hash: SecureRandom.urlsafe_base64)
+LoginInvitation.create(email: "binu@binu.com", unique_hash: SecureRandom.urlsafe_base64)
 
 User.create(email: "avi@avi.com")
 

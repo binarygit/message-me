@@ -22,10 +22,17 @@ User.create(email: "avi@avi.com")
   User.create(email: Faker::Internet.unique.email)
 end
 
-room = Room.create(name: "Party Room")
+room_one = Room.create(name: "Fun Room")
+room_two = Room.create(name: "Party Room")
 
-50.times do
+10.times do
   user = User.all.sample
   message = user.messages.build(description: Faker::Quote.famous_last_words)
-  room.messages << message
+  room_one.messages << message
+end
+
+10.times do
+  user = User.all.sample
+  message = user.messages.build(description: Faker::Quote.famous_last_words)
+  room_two.messages << message
 end

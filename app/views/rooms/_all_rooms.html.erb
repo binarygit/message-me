@@ -1,0 +1,12 @@
+<section>
+  <h2>All rooms</h2>
+  <% Room.all.each do |room| %>
+    <% if room == @room %>
+      <button id="<%= dom_id room, :button %>" class="btn btn-info" disabled><%= room.name %></button>
+    <% else %>
+      <%= link_to room do %>
+        <button id="<%= dom_id room, :button %>" class="btn btn-info operative"><%= room.name %></button>
+      <% end %>
+    <% end %>
+  <% end %>
+</section>

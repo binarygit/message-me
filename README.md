@@ -1,5 +1,7 @@
 # Message-me!
 
+![message-me](https://user-images.githubusercontent.com/87677429/205458573-4730362d-3a6a-40e3-8c17-d0008a4f6c89.png)
+
 Message-me is a fun little project. It's a realtime chatapp built using **_only_** Ruby on Rails.
 
 Here's the live version, just login and start chatting!

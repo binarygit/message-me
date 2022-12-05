@@ -10,7 +10,7 @@
 
 <% 19.times do |i| %>
 - message_<%= i %>:
-    description: party_<%= i %>
+    description: message_<%= i %>
     author: avi
     room: one
     created_at: <%= Time.now - i %>

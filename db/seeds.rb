@@ -12,18 +12,12 @@ LoginInvitation.delete_all
 User.destroy_all
 Room.destroy_all
 
-LoginInvitation.create(email: "avi@avi.com", unique_hash: SecureRandom.urlsafe_base64)
-LoginInvitation.create(email: "mobile@mobile.com", unique_hash: SecureRandom.urlsafe_base64)
-LoginInvitation.create(email: "binu@binu.com", unique_hash: SecureRandom.urlsafe_base64)
-
-User.create(email: "avi@avi.com")
-
 5.times do 
   User.create(email: Faker::Internet.unique.email)
 end
 
 room_one = Room.create(name: "Fun Room")
-room_two = Room.create(name: "Party Room")
+room_two = Room.create(name: "Sad Room")
 
 10.times do
   user = User.all.sample

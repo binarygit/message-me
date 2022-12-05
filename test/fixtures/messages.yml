@@ -1,6 +1,18 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-first:
-  description: "Hello World!"
-  author: avi
-  room: one
+--- !omap
+- first:
+    description: "Hello World!"
+    author: avi
+    room: one
+    # This needs to be Message.first
+    created_at: <%= Time.now - 500 %>
+
+<% 19.times do |i| %>
+- message_<%= i %>:
+    description: party_<%= i %>
+    author: avi
+    room: one
+    created_at: <%= Time.now - i %>
+<% end %>
+

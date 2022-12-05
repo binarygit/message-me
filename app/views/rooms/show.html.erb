@@ -5,6 +5,7 @@
   <%= image_tag "mountain.png", height: "50px" %>
     </h1>
     <div id="messages" >
+      <button id="load-more" class="btn btn-secondary" data-controller="message" data-action="click->message#loadMoreMessages" data-room-id="<%= @room.id %>">Load more messages</button>
       <%= render partial: 'messages/message', collection: @messages %>
       <div id="anchor"></div>
     </div>

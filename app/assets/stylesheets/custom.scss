@@ -49,6 +49,12 @@ li {
   font-size: .8rem;
 }
 
+#all-rooms-list {
+  button {
+    font-size: .7rem;
+  }
+}
+
 @media (max-width: 810px) {
   .verify-page {
     flex-direction: column;

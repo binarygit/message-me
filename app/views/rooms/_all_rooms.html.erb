@@ -1,5 +1,5 @@
-<section>
-  <h2>All rooms</h2>
+<section id="all-rooms-list" class="p-2">
+  <h6>All rooms</h6>
   <% Room.all.each do |room| %>
     <% if room == @room %>
       <button id="<%= dom_id room, :button %>" class="btn btn-info" disabled><%= room.name %></button>

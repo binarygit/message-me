@@ -22,6 +22,15 @@ class MessagesTest < ApplicationSystemTestCase
     assert_no_selector "div", text: "Hello World!"
     click_button "Load more messages"
     assert_selector "div", text: "Hello World!"
+    # A flash is displayed when there are no more
+    # messages to load
+
+    # Need to wait here, for the Login flash
+    # to disappear...urgh
+    # TODO find a way to reload the page
+    assert_no_selector ".flash", wait: 6
+    click_button "Load more messages"
+    assert_selector ".flash"
   end
 
   test "loading more messages after new messages have been sent" do

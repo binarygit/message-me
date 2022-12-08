@@ -55,6 +55,12 @@ li {
   }
 }
 
+.flash {
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+}
+
 @media (max-width: 810px) {
   .verify-page {
     flex-direction: column;
@@ -69,6 +75,14 @@ li {
   #messages {
     max-height: 788px;
     overflow: scroll;
+  }
+
+  .flash {
+    opacity: 0.89;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 

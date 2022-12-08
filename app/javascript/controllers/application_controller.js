@@ -1,5 +1,5 @@
-import { Controller } from '@hotwired/stimulus'
-import StimulusReflex from 'stimulus_reflex'
+import { Controller } from "@hotwired/stimulus";
+import StimulusReflex from "stimulus_reflex";
 
 /* This is your ApplicationController.
  * All StimulusReflex controllers should inherit from this class.
@@ -13,8 +13,8 @@ import StimulusReflex from 'stimulus_reflex'
  * Learn more at: https://docs.stimulusreflex.com
  */
 export default class extends Controller {
-  connect () {
-    StimulusReflex.register(this)
+  connect() {
+    StimulusReflex.register(this);
   }
 
   /* Application-wide lifecycle methods
@@ -34,40 +34,40 @@ export default class extends Controller {
    *   id - a UUID4 or developer-provided unique identifier for each Reflex
    */
 
-  beforeReflex (element, reflex, noop, id) {
+  beforeReflex(element, reflex, noop, id) {
     // document.body.classList.add('wait')
   }
 
-  reflexQueued (element, reflex, noop, id) {
+  reflexQueued(element, reflex, noop, id) {
     // Reflex will be delivered to server upon reconnection
   }
 
-  reflexDelivered (element, reflex, noop, id) {
+  reflexDelivered(element, reflex, noop, id) {
     // Reflex has been delivered to the server
   }
 
-  reflexSuccess (element, reflex, noop, id) {
+  reflexSuccess(element, reflex, noop, id) {
     // show success message
   }
 
-  reflexError (element, reflex, error, id) {
+  reflexError(element, reflex, error, id) {
     // show error message
   }
 
-  reflexForbidden (element, reflex, noop, id) {
+  reflexForbidden(element, reflex, noop, id) {
     // Reflex action did not have permission to run
     // window.location = '/'
   }
 
-  reflexHalted (element, reflex, noop, id) {
+  reflexHalted(element, reflex, noop, id) {
     // handle aborted Reflex action
   }
 
-  afterReflex (element, reflex, noop, id) {
+  afterReflex(element, reflex, noop, id) {
     // document.body.classList.remove('wait')
   }
 
-  finalizeReflex (element, reflex, noop, id) {
+  finalizeReflex(element, reflex, noop, id) {
     // all operations have completed, animation etc is now safe
   }
 }

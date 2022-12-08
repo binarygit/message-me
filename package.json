@@ -7,12 +7,13 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
-    "esbuild": "^0.15.12",
-    "sass": "^1.55.0",
     "cable_ready": "5.0.0-pre9",
-    "stimulus_reflex": "stimulusreflex/dev-builds#stimulus_reflex/3447646",
+    "esbuild": "^0.15.12",
     "esbuild-rails": "^1.0.3",
-    "mrujs": "^0.10.1"
+    "mrujs": "^0.10.1",
+    "prettier": "^2.8.1",
+    "sass": "^1.55.0",
+    "stimulus_reflex": "stimulusreflex/dev-builds#stimulus_reflex/3447646"
   },
   "scripts": {
     "build": "node esbuild.config.js",

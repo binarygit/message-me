@@ -1,0 +1,2 @@
+class VoicechatsController < ApplicationController
+end

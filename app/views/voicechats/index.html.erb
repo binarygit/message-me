@@ -1,0 +1,11 @@
+<%= tag.div id: "videochat", data: { controller: "videochat" } do %>
+  <h1>You can voice chat from here</h1>
+  
+  <video id="local-video" playsinline></video>
+  <video id="remote-video" playsinline></video>
+  
+  <div class="box">
+    <button id="startButton" class="btn btn-primary">Start</button>
+    <button id="hangupButton" class="btn btn-secondary">Hang Up</button>
+  </div>
+<% end %>

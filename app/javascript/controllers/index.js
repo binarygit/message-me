@@ -2,25 +2,28 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application";
+import { application } from "./application"
 
-import ApplicationController from "./application_controller";
-application.register("application", ApplicationController);
+import ApplicationController from "./application_controller"
+application.register("application", ApplicationController)
 
-import ExampleController from "./example_controller";
-application.register("example", ExampleController);
+import ExampleController from "./example_controller"
+application.register("example", ExampleController)
 
-import HelloController from "./hello_controller";
-application.register("hello", HelloController);
+import HelloController from "./hello_controller"
+application.register("hello", HelloController)
 
-import MessageController from "./message_controller";
-application.register("message", MessageController);
+import MessageController from "./message_controller"
+application.register("message", MessageController)
 
-import RemoveElementController from "./remove_element_controller";
-application.register("remove-element", RemoveElementController);
+import RemoveElementController from "./remove_element_controller"
+application.register("remove-element", RemoveElementController)
 
-import ResetFormController from "./reset_form_controller";
-application.register("reset-form", ResetFormController);
+import ResetFormController from "./reset_form_controller"
+application.register("reset-form", ResetFormController)
 
-import RoomController from "./room_controller";
-application.register("room", RoomController);
+import RoomController from "./room_controller"
+application.register("room", RoomController)
+
+import VideochatController from "./videochat_controller"
+application.register("videochat", VideochatController)

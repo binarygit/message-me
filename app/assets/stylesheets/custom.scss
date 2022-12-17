@@ -61,6 +61,22 @@ li {
   top: 10px;
 }
 
+.pulsating {
+  animation-duration: 2s;
+  animation-name: pulsating;
+  animation-iteration-count: 1;
+}
+
+@keyframes pulsating {
+  from {
+    transform: scale(1.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 810px) {
   .verify-page {
     flex-direction: column;

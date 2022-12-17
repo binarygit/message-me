@@ -1,4 +1,4 @@
-<%= tag.div id: "videochat", data: { controller: "videochat" } do %>
+<%= tag.div id: "videochat", data: { controller: "videochat", 'videochat-id-value': SecureRandom.hex(10) } do %>
   <h1>You can voice chat from here</h1>
   
   <video id="local-video" playsinline data-videochat-target="localVideo" autoplay></video>

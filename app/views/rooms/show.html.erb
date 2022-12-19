@@ -1,34 +1,36 @@
-<main class="container" data-controller="room" data-room-id-value ="<%= @room.id %>">
-  <section class="d-flex justify-content-end p-3"><%= button_to "Logout", logout_path, class: "btn btn-danger", method: "delete" %></section>
-  <section >
-    <h1><%= @room.name %>
-  <%= image_tag "mountain.png", height: "50px" %>
-    </h1>
-    <div id="messages" >
-      <button id="load-more" class="btn btn-secondary" data-controller="message" data-action="click->message#loadMoreMessages" data-room-id="<%= @room.id %>">Load more messages</button>
-      <%= render partial: 'messages/message', collection: @messages %>
-      <div id="anchor"></div>
-    </div>
-
-    <%= form_with model: Message.new, class: "p-2 row row-cols-lg-auto g-3 align-items-center card-footer", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }, local: true do |f| %>
-      <%= f.hidden_field :room_id, value: @room.id %>
-      <div class="col-12 flex-grow-1">
-        <div class="input-group">
-          <%= f.text_field :description, 
-            placeholder: "Write your message here", class: "form-control p-2"
-          %>
-        </div>
+<main id="room-show" class="container" data-controller="room" data-room-id-value ="<%= @room.id %>">
+  <div id="core-items">
+    <section class="d-flex justify-content-end p-3"><%= button_to "Logout", logout_path, class: "btn btn-danger", method: "delete" %></section>
+    <section >
+      <h1><%= @room.name %>
+    <%= image_tag "mountain.png", height: "50px" %>
+      </h1>
+      <div id="messages" >
+        <button id="load-more" class="btn btn-secondary" data-controller="message" data-action="click->message#loadMoreMessages" data-room-id="<%= @room.id %>">Load more messages</button>
+        <%= render partial: 'messages/message', collection: @messages %>
+        <div id="anchor"></div>
       </div>
-      <div class="col-12 flex-grow">
-        <div class="input-group">
-          <%= f.submit "Send message",
-            id: "message-submit-btn",
-            class: "btn btn-primary form-control p-2",
-            "data-disable": true
-          %>
+    
+      <%= form_with model: Message.new, class: "p-2 row row-cols-lg-auto g-3 align-items-center card-footer", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }, local: true do |f| %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <div class="col-12 flex-grow-1">
+          <div class="input-group">
+            <%= f.text_field :description,
+              placeholder: "Write your message here", class: "form-control p-2"
+            %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </section>
+        <div class="col-12 flex-grow">
+          <div class="input-group">
+            <%= f.submit "Send message",
+              id: "message-submit-btn",
+              class: "btn btn-primary form-control p-2",
+              "data-disable": true
+            %>
+          </div>
+        </div>
+      <% end %>
+    </section>
+  </div>
   <%= render partial: "all_rooms" %>
 </main>

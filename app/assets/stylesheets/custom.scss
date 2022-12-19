@@ -111,6 +111,21 @@ li {
     overflow: scroll;
   }
 
+  #room-show {
+    display: flex;
+    flex-direction: row-reverse;
+    
+    #core-items {
+      flex-grow: 2;
+    }
+  }
+
+  #all-rooms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
   .flash {
     opacity: 0.89;
 

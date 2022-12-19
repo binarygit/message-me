@@ -67,6 +67,24 @@ li {
   animation-iteration-count: 1;
 }
 
+.loaded-message {
+  div {
+    animation-duration: 3s;
+    animation-name: marked;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes marked {
+  from {
+    background-color: $orange-100;
+  }
+
+  to {
+    background-color: white;
+  }
+}
+
 @keyframes pulsating {
   from {
     transform: scale(1.5);

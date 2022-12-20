@@ -7,11 +7,11 @@ class ApplicationController < ActionController::Base
   def current_user
     return nil unless logged_in?
 
-    User.find(session[:user_id])
+    User.find(cookies.encrypted[:user_id])
   end
 
   def logged_in?
-    !session[:user_id].nil?
+    !cookies.encrypted[:user_id].nil?
   end
 
   def require_login

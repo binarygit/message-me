@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     @invitation = LoginInvitation.find(params[:invitation_id])
     @user = User.find_or_create_by(email: @invitation.email)
     @invitation.delete
-    session[:user_id] = @user.id
+    cookies.encrypted[:user_id] = @user.id
     
     flash[:success] = "You are successfully logged in."
     # TODO redirect to the last room the user was in
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    cookies.delete nil
     flash[:success] = "Successfully logged out."
     redirect_to root_path
   end

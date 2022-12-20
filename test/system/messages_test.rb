@@ -2,13 +2,12 @@ require "application_system_test_case"
 
 class MessagesTest < ApplicationSystemTestCase
   def setup
-    @invitation = login_invitations(:one)
+    login_with(login_invitations(:one))
+    visit room_url(rooms(:one))
   end
 
 
   test "creating a message" do
-    visit login_invitations_verify_url(@invitation.unique_hash)
-    click_button "Finish Login"
     assert_selector "input", id: "message_description"
     fill_in id: "message_description", with: "Hello World!"
     click_button "Send message"
@@ -17,8 +16,6 @@ class MessagesTest < ApplicationSystemTestCase
   end
 
   test "loading more messages" do
-    visit login_invitations_verify_url(@invitation.unique_hash)
-    click_button "Finish Login"
     refresh
     assert_no_selector "div", text: "Hello World!"
     click_button "Load more messages"
@@ -31,8 +28,6 @@ class MessagesTest < ApplicationSystemTestCase
   end
 
   test "loading more messages after new messages have been sent" do
-    visit login_invitations_verify_url(@invitation.unique_hash)
-    click_button "Finish Login"
     10.times do |i|
       fill_in id: "message_description", with: "new_message_#{i}"
       click_button "Send message"

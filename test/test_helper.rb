@@ -14,3 +14,10 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
 end
+
+class ActionDispatch::SystemTestCase
+  def login_with(invitation)
+    visit login_invitations_verify_url(invitation.unique_hash)
+    click_button "Finish Login"
+  end
+end

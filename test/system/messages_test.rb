@@ -19,16 +19,13 @@ class MessagesTest < ApplicationSystemTestCase
   test "loading more messages" do
     visit login_invitations_verify_url(@invitation.unique_hash)
     click_button "Finish Login"
+    refresh
     assert_no_selector "div", text: "Hello World!"
     click_button "Load more messages"
     assert_selector "div", text: "Hello World!"
     # A flash is displayed when there are no more
     # messages to load
-
-    # Need to wait here, for the Login flash
-    # to disappear...urgh
-    # TODO find a way to reload the page
-    assert_no_selector ".flash", wait: 6
+    assert_no_selector ".flash"
     click_button "Load more messages"
     assert_selector ".flash"
   end

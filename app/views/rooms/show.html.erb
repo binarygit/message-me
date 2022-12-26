@@ -1,6 +1,9 @@
 <main id="room-show" class="container" data-controller="room" data-room-id-value ="<%= @room.id %>">
   <div id="core-items">
-    <section class="d-flex justify-content-end p-3"><%= button_to "Logout", logout_path, class: "btn btn-danger", method: "delete" %></section>
+    <section class="d-flex justify-content-between p-3">
+      <%= tag.button "Users", class: "btn btn-primary", data: { "bs-toggle": "modal", "bs-target": "#users-modal" } %>
+      <turbo-frame id="users" src="/users"></turbo-frame>
+      <%= button_to "Logout", logout_path, class: "btn btn-danger", method: "delete" %></section>
     <section >
       <h1><%= @room.name %>
     <%= image_tag "mountain.png", height: "50px" %>
@@ -10,7 +13,7 @@
         <%= render partial: 'messages/message', collection: @messages %>
         <div id="anchor"></div>
       </div>
-    
+
       <%= form_with model: Message.new, class: "p-2 row row-cols-lg-auto g-3 align-items-center card-footer", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }, local: true do |f| %>
         <%= f.hidden_field :room_id, value: @room.id %>
         <div class="col-12 flex-grow-1">

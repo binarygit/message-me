@@ -1,0 +1,23 @@
+<turbo-frame id="users">
+  <div class="modal fade" id="users-modal" tabindex="-1" aria-labelledby="users-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="users-modal">Users</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <section id="online-users">
+            <h4>Online users</h4>
+            <%= render partial: "users/user", collection: @online_users, as: :user %>
+          </section>
+          <hr>
+          <section id="offline-users">
+            <h4>Offline users</h4>
+            <%= render partial: "users/user", collection: @offline_users, as: :user %>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</turbo-frame>

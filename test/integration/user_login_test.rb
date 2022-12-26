@@ -78,6 +78,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'static_pages/home'
     assert flash[:success]
+    # TODO failing test
     assert_not is_logged_in?
   end
 

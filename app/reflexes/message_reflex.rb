@@ -7,7 +7,7 @@ class MessageReflex < ApplicationReflex
     if messages.any?
       cable_ready.insert_adjacent_html(selector: "#load-more", html: render(LoadedMessageComponent.with_collection(messages)), position: "afterend")
     else
-      cable_ready.prepend(selector: "#flash-container", html: render(partial: "layouts/flash", locals: { message_type: 'warning', message: "No more messages!"}))
+      cable_ready.prepend(selector: "#flash-container", html: render(FlashComponent.new(message_type: 'warning', message: "No more messages!")))
     end
     morph :nothing
   end

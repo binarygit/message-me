@@ -14,7 +14,7 @@
     <div class="container">
       <div id="flash-container" class="flash-container d-flex justify-content-center">
         <% flash.each do |message_type, message| %>
-          <%= render partial: "layouts/flash", locals: { message_type: message_type, message: message} %>
+          <%= render FlashComponent.new(message_type: message_type, message: message) %>
         <% end %>
       </div>
     </div>

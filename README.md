@@ -21,9 +21,5 @@ That's it.
 
 I also wanted to improve my testing skills and increasing myI did read that familiarity with `sidekiq`, and I wanted to learn to use View Components!
 
-### Todo
-1. Use View Components to show user cards.
-2. Implement voice chat.
-
 #### Side note
 I decided to ditch the established method of signing up, where users need to create atleast a email/password combo to sign up and enter those cred to login. I think we can do without it. I don't know why it's so prevalent!

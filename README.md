@@ -15,11 +15,11 @@ I decided to build this because I wanted to experiment with real time features. 
 The tools involved in making it realtime are:
 
 1. [Ruby on Rails](https://rubyonrails.org/)
-2. [Stimulus Reflex](https://docs.stimulusreflex.com/)
+2. [Cable Ready](https://cableready.stimulusreflex.com/)
 
 That's it.
 
-I also wanted to improve my testing skills and increasing myI did read that familiarity with `sidekiq`, and I wanted to learn to use View Components!
+I also wanted to improve my testing skills and increasing my familiarity with `sidekiq`, and I wanted to learn to use View Components!
 
 #### Side note
 I decided to ditch the established method of signing up, where users need to create atleast a email/password combo to sign up and enter those cred to login. I think we can do without it. I don't know why it's so prevalent!

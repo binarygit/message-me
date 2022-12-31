@@ -5,8 +5,9 @@ class Message < ApplicationRecord
   validates :description, presence: true
 
   after_create do
-    partial = {partial: "messages/message", locals: { message: self }}
-    cable_ready[RoomsChannel].insert_adjacent_html(selector: "#anchor", html: render(partial), position: "beforebegin").broadcast_to(self.room)
+    cable_ready[RoomsChannel].insert_adjacent_html(selector: "#anchor", html: render(MessageComponent.new(message: self)), position: "beforebegin").broadcast_to(self.room)
+
+    # Notify that a new message has been created
     selector = "#{ dom_id self.room, :button }.operative"
     cable_ready['room'].text_content(selector: selector, text: "#{self.room.name}*").
       remove_css_class(selector: selector, name: "btn-info").

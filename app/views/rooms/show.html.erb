@@ -10,7 +10,7 @@
       </h1>
       <div id="messages" >
         <button id="load-more" class="btn btn-secondary" data-controller="message" data-action="click->message#loadMoreMessages" data-room-id="<%= @room.id %>">Load more messages</button>
-        <%= render partial: 'messages/message', collection: @messages %>
+        <%= render MessageComponent.with_collection(@messages) %>
         <div id="anchor"></div>
       </div>
 

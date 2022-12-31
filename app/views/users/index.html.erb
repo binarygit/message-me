@@ -9,12 +9,12 @@
         <div class="modal-body">
           <section id="online-users">
             <h4>Online users</h4>
-            <%= render partial: "users/user", collection: @online_users, as: :user %>
+            <%= render UserComponent.with_collection(@online_users) %>
           </section>
           <hr>
           <section id="offline-users">
             <h4>Offline users</h4>
-            <%= render partial: "users/user", collection: @offline_users, as: :user %>
+            <%= render UserComponent.with_collection(@offline_users) %>
           </section>
         </div>
       </div>

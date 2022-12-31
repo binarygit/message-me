@@ -6,8 +6,7 @@ export default class extends ApplicationController {
   }
 
   loadMoreMessages() {
-    let messages = document.querySelector("#messages");
-    let offset = messages.childElementCount;
+    let offset = document.querySelectorAll("#messages .message").length;
     this.stimulate("Message#load_more_messages", offset);
   }
 }

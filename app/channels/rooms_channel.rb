@@ -17,6 +17,7 @@ class RoomsChannel < ApplicationCable::Channel
   private
 
   def html
-    ApplicationController.render(partial: "users/user", locals: { user: current_user })
+    #ApplicationController.render(partial: "users/user", locals: { user: current_user })
+    ApplicationController.render(UserComponent.new(user: current_user))
   end
 end
